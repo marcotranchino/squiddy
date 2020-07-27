@@ -16,6 +16,9 @@ when "pull_request"
     check_environment_variable(env)
   end
 
+  require_relative '../config/initializers/trello'
+
+  puts "Running TrelloPullRequest"
   Squiddy::TrelloPullRequest.run
 else
   puts "Nothing to do!"
